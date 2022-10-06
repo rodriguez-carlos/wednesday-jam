@@ -8,15 +8,7 @@ const Container = styled.article`
 const Section = styled.section`
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
-  padding: 2rem 3rem;
-
-  @media (min-width: 960px) {
-    padding: 2rem 8rem;
-  }
-
-  @media (min-width: 1240px) {
-    padding: 2rem 14rem;
-  }
+  width: 100%;
 `;
 
 const ActionButton = styled.button`

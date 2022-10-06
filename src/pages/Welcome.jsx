@@ -1,5 +1,5 @@
 const Welcome = () => {
-    return(
+    return (
         <h1>This is the welcome page</h1>
     )
 };
