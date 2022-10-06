@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { getWeatherInfo } from "../api"
+import { ActionButton } from "./ContentSections/common"
 
 export const LoginForm = () => {
 
@@ -9,15 +10,13 @@ export const LoginForm = () => {
         console.log(newPassword)
     }
     useEffect(() => {
-        (async () => {
-            const data = await getWeatherInfo(39.7456, -97.0892)
-            console.log(data)
-        })()
+
     }, [])
 
     return (
         <>
-            <h1>login form</h1>
+            <h1>Volante Quick Connect</h1>
+            <ActionButton bgColor='#143A78' color='#D3F3FE' fontSize="20px">Login</ActionButton>
         </>
     )
 }
