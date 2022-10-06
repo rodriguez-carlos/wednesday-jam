@@ -15,8 +15,8 @@ export const LoginForm = () => {
 
     return (
         <>
-            <h1>Volante Quick Connect</h1>
-            <ActionButton bgColor='#143A78' color='#D3F3FE' fontSize="20px">Login</ActionButton>
+            <h1>Volante QuickConnect</h1>
+            <ActionButton bgColor='#143A78' color='#D3F3FE' fontSize="20px">LOGIN</ActionButton>
         </>
     )
 }
