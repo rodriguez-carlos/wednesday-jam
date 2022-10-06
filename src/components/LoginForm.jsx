@@ -1,8 +1,10 @@
 import { useEffect } from "react"
 import { getWeatherInfo } from "../api"
-import { ActionButton } from "./ContentSections/common"
+import { useTheme } from "@emotion/react"
+import { ActionButton, MainHeading, Text } from "./ContentSections/common"
 
 export const LoginForm = () => {
+    const theme = useTheme();
 
     const makePassword = (username) => {
         let usernameArray = username.split('')
@@ -15,8 +17,9 @@ export const LoginForm = () => {
 
     return (
         <>
-            <h1>Volante QuickConnect</h1>
-            <ActionButton bgColor='#143A78' color='#D3F3FE' fontSize="20px">LOGIN</ActionButton>
+            <MainHeading fontSize='20px'>Volante QuickConnect</MainHeading>
+            <Text fontSize='12px' color={theme.colors.gray}>Please login to your platform</Text>
+            <ActionButton bgColor={theme.colors.blue} color={theme.colors.white} fontSize="20px">LOGIN</ActionButton>
         </>
     )
 }

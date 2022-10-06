@@ -22,4 +22,16 @@ const ActionButton = styled.button`
     cursor: pointer;
 `;
 
-export { Container, Section, ActionButton };
+const MainHeading = styled.h1`
+    color: ${props => props.color};
+    font-size: ${props => props.fontSize};
+    font-family: 'Calibri'
+`;
+
+const Text = styled.p`
+    color: ${props => props.color};
+    font-size: ${props => props.fontSize};
+    font-family: 'Calibri'
+`;
+
+export { Container, Section, ActionButton, MainHeading, Text };
