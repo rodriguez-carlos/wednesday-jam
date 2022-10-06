@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { getWeatherInfo } from "../api"
 
 export const LoginForm = () => {
 
@@ -8,7 +9,10 @@ export const LoginForm = () => {
         console.log(newPassword)
     }
     useEffect(() => {
-        makePassword('prueba')
+        (async () => {
+            const data = await getWeatherInfo(39.7456, -97.0892)
+            console.log(data)
+        })()
     }, [])
 
     return (
