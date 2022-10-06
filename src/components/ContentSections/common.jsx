@@ -25,13 +25,13 @@ const ActionButton = styled.button`
 const MainHeading = styled.h1`
     color: ${props => props.color};
     font-size: ${props => props.fontSize};
-    font-family: 'Calibri'
+    font-family: 'Calibri';
 `;
 
 const Text = styled.p`
     color: ${props => props.color};
     font-size: ${props => props.fontSize};
-    font-family: 'Calibri'
+    font-family: 'Calibri';
 `;
 
 export { Container, Section, ActionButton, MainHeading, Text };

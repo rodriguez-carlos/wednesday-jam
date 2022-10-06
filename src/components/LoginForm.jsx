@@ -3,6 +3,7 @@ import { getWeatherInfo } from "../api"
 import { useTheme } from "@emotion/react"
 import { ActionButton, MainHeading, Section, Text } from "./ContentSections/common"
 import styled from "@emotion/styled"
+import TextInputField from "./TextInputField"
 
 const LoginFormSection = styled(Section)`
   display: flex;  
@@ -28,6 +29,7 @@ export const LoginForm = () => {
         <LoginFormSection>
             <MainHeading fontSize='20px'>Volante QuickConnect</MainHeading>
             <Text fontSize='12px' color={theme.colors.gray}>Please login to your platform</Text>
+            <TextInputField />
             <ActionButton bgColor={theme.colors.blue} color={theme.colors.white} fontSize="20px">LOGIN</ActionButton>
         </LoginFormSection>
     )
