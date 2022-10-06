@@ -4,6 +4,8 @@ import { useTheme } from "@emotion/react"
 import { ActionButton, MainHeading, Section, Text } from "./ContentSections/common"
 import styled from "@emotion/styled"
 import TextInputField from "./TextInputField"
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 
 const LoginFormSection = styled(Section)`
   display: flex;  
@@ -11,6 +13,7 @@ const LoginFormSection = styled(Section)`
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 300px;
 `;
 
 export const LoginForm = () => {
@@ -29,7 +32,7 @@ export const LoginForm = () => {
         <LoginFormSection>
             <MainHeading fontSize='20px'>Volante QuickConnect</MainHeading>
             <Text fontSize='12px' color={theme.colors.gray}>Please login to your platform</Text>
-            <TextInputField />
+            <TextInputField bgColor={theme.colors.lightGray} icon={faUser}/>
             <ActionButton bgColor={theme.colors.blue} color={theme.colors.white} fontSize="20px">LOGIN</ActionButton>
         </LoginFormSection>
     )
