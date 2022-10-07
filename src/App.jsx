@@ -1,5 +1,4 @@
 import { ThemeProvider } from '@emotion/react';
-import './App.css';
 import Router from './Router';
 import Theme from './styles/theme';
 
