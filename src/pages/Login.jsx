@@ -5,14 +5,22 @@ import volanteArt from '../assets/volanteBanner.jpg'
 
 const LoginLayout = styled(Container)`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+
+    @media (min-width: 1200px) {
+        flex-direction: row;
+    }
 `;
 
 const VolanteBanner = styled(Section)`
-  width: 50%;
+    padding: 0;
+    @media (min-width: 1200px) {
+        width: 50%;
+    }
+
 `;
 
 const Login = () => {

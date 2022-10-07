@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from "@emotion/react";
 import { ActionButton, MainHeading, Section, Text } from "./ContentSections/common";
@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 import TextInputField from "./TextInputField";
 import { faUser, faKey, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import validatePassword from '../utils/validatePassword';
-import { getWeatherInfo } from "../api/index";
 
 
 const LoginFormSection = styled(Section)`
@@ -17,6 +16,8 @@ const LoginFormSection = styled(Section)`
   justify-content: center;
   height: 100%;
   width: 50%;
+  margin-bottom: 3rem;
+
 `;
 
 export const LoginForm = () => {
