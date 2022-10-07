@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import TextInputField from "./TextInputField";
 import { faUser, faKey, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import validatePassword from '../utils/validatePassword';
+import { getWeatherInfo } from "../api/index";
 
 
 const LoginFormSection = styled(Section)`
@@ -24,11 +25,7 @@ export const LoginForm = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [didWrongInput, setDidWrongInput] = useState(false)
-
-    useEffect(() => {
-
-    }, [])
+    const [didWrongInput, setDidWrongInput] = useState(false);
 
     return (
         <LoginFormSection className="login-form-section">
@@ -71,6 +68,7 @@ export const LoginForm = () => {
                 <ActionButton 
                     color={theme.colors.white} 
                     fontSize="20px"
+                    width='100%'
                     onClick={(e) => {
                         const wrongAttempt = !validatePassword(username, password);
                         if (wrongAttempt)

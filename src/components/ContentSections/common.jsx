@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 const Container = styled.article`
     position: relative;
     overflow: hidden;
+    height: 90vh;
 `;
 
 const Section = styled.section`
@@ -18,7 +19,7 @@ const ActionButton = styled.button`
     border: 0px;
     margin: 5px 0;
     padding: 0.8rem 2rem;
-    width: 100%;
+    width: ${props => props.width};
     display: inline-block;
     cursor: pointer;
 `;
@@ -36,4 +37,11 @@ const Text = styled.p`
     font-family: 'Calibri';
 `;
 
-export { Container, Section, ActionButton, MainHeading, Text };
+const BackgroundImage = styled.div`
+    background-image: ${props => props.bgImage};
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+`
+
+export { Container, Section, ActionButton, MainHeading, Text, BackgroundImage };

@@ -1,14 +1,21 @@
 import axios from "axios"
 
-const ApiClient = axios.create({
+const ApiPointsClient = axios.create({
     baseURL: 'https://api.weather.gov/points'
 })
 
-export async function getGridInfo(lat, lon) {
-    const response = await ApiClient.get(`${lat},${lon}`)
-    return response.data
+const ApiGridPointsClient = axios.create({
+    baseURL: 'https://api.weather.gov/gridpoints'
+})
+
+export async function getTemperatureInfo(lat, lon) {
+    const response = await ApiPointsClient.get(`${lat},${lon}`);
+    const gridId = response.data.properties.gridId;
+    const gridX = response.data.properties.gridX;
+    const gridY = response.data.properties.gridY;
+
+    const forecast = await ApiGridPointsClient.get(`${gridId}/${gridX},${gridY}/forecast`)
+    return forecast.data.properties.periods[0].temperature;
 }
 
-export async function getWeatherInfo(grid) {
-    const response = await ApiClient.get()
-}
+
