@@ -7,9 +7,16 @@ const TextFieldWrapper = styled.div`
     position: relative;
 `;
 
-const InputIcon = styled(FontAwesomeIcon)`
+const InputIconLeft = styled(FontAwesomeIcon)`
     position: absolute;
     left: 10px;
+    top: 50%;
+    transform : translateY(-50%);
+`;
+
+const InputIconRight = styled(FontAwesomeIcon)`
+    position: absolute;
+    right: 10px;
     top: 50%;
     transform : translateY(-50%);
 `;
@@ -26,17 +33,14 @@ const TextField = styled.input`
     box-sizing: border-box;
 `;
 
-const TextInputField = ({bgColor, color, fontSize, icon}) => {
+const TextInputField = ({iconLeft, iconRight, ...props}) => {
     return (
         <TextFieldWrapper>
-            <InputIcon icon={icon} />
+            <InputIconLeft icon={iconLeft} />
             <TextField
-                bgColor={bgColor} 
-                color={color}
-                fontSize={fontSize}
-                type='text'
-                placeholder="hola"
+                {...props} 
             />
+            {iconRight ? <InputIconRight icon={iconRight} /> : ''}
         </TextFieldWrapper>
     )
 };

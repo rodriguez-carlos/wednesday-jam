@@ -12,7 +12,7 @@ const Section = styled.section`
 `;
 
 const ActionButton = styled.button`
-    background-color: ${props => props.bgColor};
+    background-color: ${props => props.theme.colors.blue};
     color: ${props => props.color};
     font-size: ${props => props.fontSize};
     border-radius: 10px;
