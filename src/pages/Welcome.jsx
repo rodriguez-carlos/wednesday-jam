@@ -31,35 +31,38 @@ const Welcome = () => {
     }, []);
 
     useEffect(() => {
-        (async () => {
-            const data = await getTemperatureInfo(selectedCity.latitude, selectedCity.longitude);
-            setRawTemperature(data)
-            setTemperature(data)
-        })();
+        if ('city' in selectedCity) {
+            (async () => {
+                console.log(selectedCity)
+                const data = await getTemperatureInfo(selectedCity.latitude, selectedCity.longitude);
+                setRawTemperature(data)
+                setTemperature(data)
+            })();
+        }
     }, [selectedCity])
 
     return (
         <Container>
-            <BackgroundImage bgImage={`url(${selectedCity.media})`}>
-                {selectedCity ? 
-                <Watermark>
-                    <MainHeading 
-                        fontSize='40px'>
-                            Visit {selectedCity.city}, State of {selectedCity.state}
-                    </MainHeading> 
-                    <Text fontSize='20px'>Temperature is currently {temperature}° {isFarenheit ? 'F' : 'C'}</Text>
-                    <ActionButton 
-                        onClick={() => {
-                            setIsFarenheit(!isFarenheit)
-                            isFarenheit ? setTemperature(Math.floor((temperature - 32) * 0.5556)) : setTemperature(rawTemperature)
-                        }}
-                        color={theme.colors.white}>
-                            Switch to {isFarenheit ? 'Celsius' : 'Farenheit'}
-                    </ActionButton>
-                </Watermark>
-                    : ''
-                }
-            </BackgroundImage>
+            {selectedCity ? 
+                <BackgroundImage bgImage={`url(${selectedCity.media})`}>
+                    <Watermark>
+                        <MainHeading 
+                            fontSize='40px'>
+                                Visit {selectedCity.city}, State of {selectedCity.state}
+                        </MainHeading> 
+                        <Text fontSize='20px'>Temperature is currently {temperature}° {isFarenheit ? 'F' : 'C'}</Text>
+                        <ActionButton 
+                            onClick={() => {
+                                setIsFarenheit(!isFarenheit)
+                                isFarenheit ? setTemperature(Math.floor((temperature - 32) * 0.5556)) : setTemperature(rawTemperature)
+                            }}
+                            color={theme.colors.white}>
+                                Switch to {isFarenheit ? 'Celsius' : 'Farenheit'}
+                        </ActionButton>
+                    </Watermark>
+                </BackgroundImage>
+            : ''
+            }
         </Container>
     )
 };
