@@ -8,7 +8,6 @@ const Container = styled.article`
 const Section = styled.section`
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
-  width: 100%;
 `;
 
 const ActionButton = styled.button`
@@ -28,6 +27,7 @@ const MainHeading = styled.h1`
     color: ${props => props.color};
     font-size: ${props => props.fontSize};
     font-family: 'Calibri';
+    margin-bottom: ${props => props.marginBot};
 `;
 
 const Text = styled.p`

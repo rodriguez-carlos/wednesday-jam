@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getWeatherInfo } from "../api";
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from "@emotion/react";
 import { ActionButton, MainHeading, Section, Text } from "./ContentSections/common";
+import Footer from "./ContentSections/Footer";
 import styled from "@emotion/styled";
 import TextInputField from "./TextInputField";
 import { faUser, faKey, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -31,8 +31,12 @@ export const LoginForm = () => {
     }, [])
 
     return (
-        <LoginFormSection>
-            <MainHeading fontSize='20px'>Volante QuickConnect</MainHeading>
+        <LoginFormSection className="login-form-section">
+            <MainHeading 
+                fontSize='25px'
+                marginBot='5px'>
+                    Volante QuickConnect
+            </MainHeading>
             <Text 
                 fontSize='12px' 
                 color={theme.colors.gray}>
@@ -80,7 +84,9 @@ export const LoginForm = () => {
                 >
                     LOGIN
                 </ActionButton>
+                <Text fontSize='12px' color={theme.colors.gray}>Forgot your password?</Text>
             </form>
+            <Footer />
         </LoginFormSection>
     )
 }
