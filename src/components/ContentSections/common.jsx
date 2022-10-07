@@ -17,6 +17,7 @@ const ActionButton = styled.button`
     font-size: ${props => props.fontSize};
     border-radius: 10px;
     border: 0px;
+    margin: 5px 0;
     padding: 0.8rem 2rem;
     width: 100%;
     display: inline-block;
