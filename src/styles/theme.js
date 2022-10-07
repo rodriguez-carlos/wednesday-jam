@@ -4,7 +4,8 @@ const Theme = {
         gray: '#71716F',
         lightGray: '#E8EBF0',
         blue: '#143A78',
-        white: '#D3F3FE'
+        white: '#D3F3FE',
+        red: '#Df2C14'
     },
 };
 
